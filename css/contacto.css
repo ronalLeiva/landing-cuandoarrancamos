@@ -1,0 +1,132 @@
+
+.formulario{
+    margin:30px auto 20px auto;
+    opacity: 1;
+    padding: 30px 40px 0 25px;
+    position: relative;
+}
+.formulario h1{
+    font-size: 3rem;
+    color:white;
+}
+.formulario input,.formulario textarea, .formulario select, .formulario button{
+    width: 60%;
+    height: 44px;
+    margin-bottom: 24px;
+    padding-left: 10px;
+    font-size: 18px;
+    transition: all 300ms ease-in-out 0s;
+    font-family: 'Roboto Condensed', sans-serif;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    color: #03386a;
+}
+
+.formulario input:active ,.formulario textarea:active{
+    border:1px solid #0f8f32;
+}
+.formulario textarea{
+    display: block;
+    height: 150px;
+    padding-top: 12px;
+    font-weight:inherit;
+}
+
+.clearfix {
+    *zoom : 1;
+}
+.clearfix:before,.clearfix:after {
+    display: table;
+    content : "";
+}
+.clearfix:after {
+    clear : both;
+}
+.msg{
+    display: none;
+}
+.error, .confirma{  
+    border-radius: 8px;
+    display:block;
+    font-size: 1.5rem;    
+    line-height: 1.5rem;
+    margin: 30% auto 0 auto;
+    min-height: 100px;
+    padding: 12px 15px;
+    position: relative;
+    text-align: center;
+    width: 90%;    
+    z-index: 9999;
+}
+.error{
+    color: #da4f49;
+    background: #f4cac8;
+    border: 1px solid #eba19e;
+}
+.confirma{
+    background-color: #a7e0b6;
+    color: #097c27;
+    border: 1px solid #78c18b;
+}
+.confirma .respuesta, .error .respuesta {
+    font-size: 1.8rem;
+    margin-top: 4%;
+    display: block;
+}
+.error .exit, .confirma .exit {
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: bold;
+    height: 28px;
+    padding: 2px 0 0 2px;
+    position: absolute;
+    right: -10px;
+    top: -10px;   
+    width: 28px;
+}
+.confirma .exit{
+    background-color: #097c27;
+    color: #fff;
+}
+.error .exit{
+    background: #da4f49;
+    color: #fff;
+}
+input:required:invalid, textarea:required:invalid, select:required:invalid{
+    box-shadow:0px 0px 5px red;
+    -webkit-box-shadow: 0px 0px 5px red;
+    -moz-box-shadow: 0px 0px 5px red;
+    outline: 2px;
+    border:1px solid red;
+    color:darkred;
+}
+input:required:valid, textarea:required:valid, select:required:valid{
+    box-shadow:0px 0px 5px #0084ff;
+    -webkit-box-shadow: 0px 0px 5px #0084ff;
+    -moz-box-shadow: 0px 0px 5px #0084ff;
+    outline: 2px;
+    border:1px solid #0084ff;
+    color:darkgreen;
+}
+input:focus, textarea:focus{
+    border:1px solid black;
+}
+.opaco{
+    background-color: rgba(0,0,0,.85);
+    display: none;
+    position: absolute;
+    left:0;    
+    min-height: 100%;
+    min-width: 100%;
+    top:0;
+}
+.loading{
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    top:40%;
+    left:0;
+    right: 0;
+}
