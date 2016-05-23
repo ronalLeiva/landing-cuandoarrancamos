@@ -18,340 +18,377 @@ body{
     line-height: 1.5em;
     height: 100%;
 }
-.wrapper{
-    min-height:100%;
-    position:relative;
-
-    .app-header{
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        position: relative;
-        z-index: 999;
-        .app-navbar{
-            -moz-box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.75);
-            -webkit-box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.75);
-            background: @amarillo;
-            border-radius:0;
-            box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.75);
-            height: 90px;
-            padding-top: 10px;
-            .app-logo{
-                height: auto;
-                margin:8px 0 0 15px;
-                padding: 0;
-                width: 145px;
-            }
-            .app-social>li>a{
-                text-shadow: none;
-                border-bottom: none;
-                color:rgba(0, 45,  98, 1);
-            }
-            .app-nav>li>a:hover{
-                background-color:transparent;
-            }
-            .app-social{
-                float:right;
-                margin:5px 5px 0 0;
-                width: 170px;
-                .app-circle{
-                    background-color: #fff;
-                    border-radius: 50%;
-                    display: block;
-                    font-size: .8em;
-                    height: 35px;
-                    padding: 11px 0px 6px 9px;
-                    width: 35px;
-                }
-            }
-            .app-social>li{
-                float: left;
-                width: 25%;
-            }
-            .app-social>li>a{
+h1{
+    font-weight:bold;
+}
+.app-header{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 999;
+    .app-navbar{
+        -moz-box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.75);
+        background: @amarillo;
+        border-radius:0;
+        box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.75);
+        height: 90px;
+        padding-top: 10px;
+        .app-logo{
+            height: auto;
+            margin:8px 0 0 15px;
+            padding: 0;
+            width: 115px;
+        }
+        .app-social>li>a{
+            text-shadow: none;
+            border-bottom: none;
+            color:rgba(0, 45,  98, 1);
+        }
+        .app-nav>li>a:hover{
+            background-color:transparent;
+        }
+        .app-social{
+            float:right;
+            margin:5px 5px 0 0;
+            width: 170px;
+            .app-circle{
+                background-color: #fff;
+                border-radius: 50%;
                 display: block;
-                padding-left:5px;
+                font-size: .8em;
+                height: 35px;
+                padding: 11px 0px 6px 9px;
+                width: 35px;
             }
-            .app-social>li>a:hover{
-                background-color: inherit;
-                color:inherit;
-            }
+        }
+        .app-social>li{
+            float: left;
+            width: 25%;
+        }
+        .app-social>li>a{
+            display: block;
+            padding-left:5px;
+        }
+        .app-social>li>a:hover{
+            background-color: inherit;
+            color:inherit;
         }
     }
-    .contenido{
-        padding-bottom:90px;
-        .cuadro-azul{
-            background-color: @azul-masesa;
-            color:@blanco;
-            padding:15px 12px;
+}
+.contenido{
+    .cuadro-azul{
+        background-color: @azul-masesa;
+        color:@blanco;
+        padding:15px 12px;
+        text-align:center;
+        h1{
+            font-size:2.5em;
             text-align:center;
-            h1{
-                font-size:2.5em;
-                font-weight: bold;
-                text-align:center;
-            }
         }
-        .cuadro-azul,
-        .video,
-        .foto-gente,
-        .foto-moto{
-            margin-bottom:5px;
+        span{
+            font-size: 1.6em;
         }
-        .callToAct{
-            background-color:@amarillo;
+    }
+    .cuadro-azul,
+    .video,
+    .foto-gente,
+    .foto-moto{
+        margin-bottom:5px;
+    }
+    .callToAct{
+        background-color:@amarillo;
+        color:@azul-masesa;
+        display:block;
+        height:160px;
+        margin-bottom:20px;
+        padding: 15px 10px;
+        text-align:center;
+        text-decoration:none;
+        h2{
+            font-size: 2.5em;
+            font-weight:bold;
+        }
+        p{
+            font-size:1.8em;
+        }
+        &:visited{
             color:@azul-masesa;
-            display:block;
-            height:160px;
-            margin-bottom:20px;
-            padding: 15px 10px;
-            text-align:center;
-            text-decoration:none;
-            h2{
-                font-size: 2.5em;
-                font-weight:bold;
-            }
-            p{
-                font-size:1.8em;
-            }
-            &:visited{
-                color:@azul-masesa;
-            }
-
         }
+
     }
-    .ir-arriba {
-        background: @azul-masesa;
-        border-radius: 50%;
-        bottom:20px;
-        color:#fff;
-        cursor:pointer;
-        display:none;
-        font-size:20px;
-        height:60px;
-        padding:20px;
-        position: fixed;
-        right:10px;
-        width:60px;
+}
+.gracias{
+    h1{
+        font-size:3.5em;
+        text-align:center;
+        color:@azul-masesa;
+    }
+    img{
+        width:60%;
+        margin:40px auto;
+    }
+    p{
+        color:@azul-masesa;
+        padding:0 30px;
+        text-align:center;
+    }
+}
+.ir-arriba {
+    background: @azul-masesa;
+    border-radius: 50%;
+    border:2px solid @blanco;
+    bottom:20px;
+    color:#fff;
+    cursor:pointer;
+    display:none;
+    font-size:20px;
+    height:60px;
+    padding:20px 0 0 18px;
+    position: fixed;
+    right:10px;
+    width:60px;
+    z-index: 9999;
+}
+.app-formulario{
+    color:@azul-masesa;
+    display:none;
+    h1{
+        text-align: center;
+    }
+    #contacto{
+        font-family: 'Roboto Condensed', sans-serif;
+        margin:0 auto;
+        position:relative;
+        width:90%;
+    }
+
+    .formulario input,.formulario textarea, .formulario select, .formulario button{
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+        box-sizing:border-box;
+        font-size: 18px;
+        height: 44px;
+        margin-bottom: 24px;
+        padding-left: 10px;
+        transition: all 300ms ease-in-out 0s;
+        width: 100%;
+    }
+    .formulario input:active ,.formulario textarea:active{
+        border:1px solid #0f8f32;
+    }
+    .formulario textarea{
+        display: block;
+        font-weight:inherit;
+        height: 150px;
+        padding-top: 12px;
+    }
+    .msg{
+        display: none;
+    }
+    .error, .confirma{
+        border-radius: 8px;
+        display:block;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        margin: 10% auto 0 auto;
+        min-height: 100px;
+        padding: 12px 15px;
+        position: relative;
+        text-align: center;
+        width: 90%;
         z-index: 9999;
     }
-    .app-footer{
-        background-color: @amarillo;
-        margin-top:20px;
-        height:90px;
-        display:block;
-        position:absolute;
-        bottom:0;
-        width:100%;
+    .error{
+        background: #f4cac8;
+        border: 1px solid #eba19e;
+        color: #da4f49;
     }
-    .app-formulario{
-        color:@azul-masesa;
-        display:none;
-        h1{
-            text-align: center;
-        }
-        #contacto{
-            font-family: 'Roboto Condensed', sans-serif;
-            margin:0 auto;
-            position:relative;
-            width:90%;
-        }
-
-        .formulario input,.formulario textarea, .formulario select, .formulario button{
-            -moz-box-sizing:border-box;
-            -webkit-box-sizing:border-box;
-            box-sizing:border-box;
-            font-size: 18px;
-            height: 44px;
-            margin-bottom: 24px;
-            padding-left: 10px;
-            transition: all 300ms ease-in-out 0s;
-            width: 100%;
-        }
-        .formulario input:active ,.formulario textarea:active{
-            border:1px solid #0f8f32;
-        }
-        .formulario textarea{
-            display: block;
-            font-weight:inherit;
-            height: 150px;
-            padding-top: 12px;
-        }
-        .msg{
-            display: none;
-        }
-        .error, .confirma{
-            border-radius: 8px;
-            display:block;
-            font-size: 1.5rem;
-            line-height: 1.5rem;
-            margin: 40% auto 0 auto;
-            min-height: 100px;
-            padding: 12px 15px;
-            position: relative;
-            text-align: center;
-            width: 90%;
-            z-index: 9999;
-        }
-        .error{
-            background: #f4cac8;
-            border: 1px solid #eba19e;
-            color: #da4f49;
-        }
-        .confirma{
-            background-color: #a7e0b6;
-            border: 1px solid #78c18b;
-            color: #097c27;
-        }
-        .confirma .respuesta, .error .respuesta {
-            display: block;
-            font-size: 1.8rem;
-            margin-top: 4%;
-        }
-        .error .exit, .confirma .exit {
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.8rem;
-            font-weight: bold;
-            height: 28px;
-            padding: 2px 0 0 2px;
-            position: absolute;
-            right: -10px;
-            top: -10px;
-            width: 28px;
-        }
-        .confirma .exit{
-            background-color: #097c27;
-            color: #fff;
-        }
-        .error .exit{
-            background: #da4f49;
-            color: #fff;
-        }
-        input:required:invalid, textarea:required:invalid, select:required:invalid{
-            -moz-box-shadow: 0px 0px 5px @rojo;
-            -webkit-box-shadow: 0px 0px 5px @rojo;
-            border:1px solid @rojo;
-            box-shadow:0px 0px 5px @rojo;
-            color:@rojo-obscuro;
-            outline: 2px;
-        }
-        input:required:valid, textarea:required:valid, select:required:valid{
-            -moz-box-shadow: 0px 0px 5px @celeste;
-            -webkit-box-shadow: 0px 0px 5px @celeste;
-            border:1px solid @celeste;
-            box-shadow:0px 0px 5px @celeste;
-            color:@verde-obscuro;
-            outline: 2px;
-        }
-        input:focus, textarea:focus{
-            border:1px solid black;
-        }
-        .opaco{
-            background-color: rgba(0,0,0,.85);
-            bottom:0;
-            display: none;
-            left:0;
-            min-height: 100%;
-            min-width: 100%;
-            position: absolute;
-            top:0;
-        }
+    .confirma{
+        background-color: #a7e0b6;
+        border: 1px solid #78c18b;
+        color: #097c27;
+    }
+    .confirma .respuesta, .error .respuesta {
+        display: block;
+        font-size: 1.8rem;
+        margin-top: 4%;
+    }
+    .error .exit, .confirma .exit {
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.8rem;
+        font-weight: bold;
+        height: 28px;
+        padding: 2px 0 0 2px;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        width: 28px;
+    }
+    .confirma .exit{
+        background-color: #097c27;
+        color: #fff;
+    }
+    .error .exit{
+        background: #da4f49;
+        color: #fff;
+    }
+    input:required:invalid, textarea:required:invalid, select:required:invalid{
+        -moz-box-shadow: 0px 0px 5px @rojo;
+        -webkit-box-shadow: 0px 0px 5px @rojo;
+        border:1px solid @rojo;
+        box-shadow:0px 0px 5px @rojo;
+        color:@rojo-obscuro;
+        outline: 2px;
+    }
+    input:required:valid, textarea:required:valid, select:required:valid{
+        -moz-box-shadow: 0px 0px 5px @celeste;
+        -webkit-box-shadow: 0px 0px 5px @celeste;
+        border:1px solid @celeste;
+        box-shadow:0px 0px 5px @celeste;
+        color:@verde-obscuro;
+        outline: 2px;
+    }
+    input:focus, textarea:focus{
+        border:1px solid black;
+    }
+    .opaco{
+        background-color: rgba(0,0,0,.85);
+        bottom:0;
+        display: none;
+        left:0;
+        min-height: 100%;
+        min-width: 100%;
+        position: absolute;
+        top:0;
         .loading{
             display: block;
             margin:0 auto;
-            padding-top: 75%;
             position: relative;
             width:123px;
+            padding-top:37%;
         }
-
-
+        .error{
+            margin-top:40%;
+        }
+    }
+}
+.app-footer{
+    background-color: @amarillo;
+    margin-top:20px;
+    height:90px;
+    display:block;
+    bottom:0;
+    width:100%;
 }
 
-}
 
 /* Tablet */
 @media (min-width:768px){
-.wrapper{
-    .container{
-        width:1001px;
-    }
-    width:1001px;
-    margin:0 auto;
-    .app-header{
-        .app-navbar{
-            height: 115px;
-            padding-top: 15px;
-            .navbar-header{
-                width: 100%;
-                .app-logo{
-                    float:left;
-                    height: auto;
-                    margin:5px 0 0 15px;
-                    padding:0;
-                }
-                .app-social{
-                    margin:-5px 0 0 0;
-                    width:270px;
-                    float:right;
-                    .app-circle{
-                        font-size: 1em;
-                        height: 45px;
-                        padding: 11px 0px 6px 13px;
-                        width: 45px;
-                    }
+.app-header{
+    .app-navbar{
+        height: 115px;
+        padding-top: 15px;
+        .navbar-header{
+            width: 100%;
+            .app-logo{
+                float:left;
+                height: auto;
+                margin:5px 0 0 15px;
+                padding:0;
+                width: 205px;
+            }
+            .app-social{
+                margin:-5px 0 0 0;
+                width:270px;
+                float:right;
+                .app-circle{
+                    font-size: 1em;
+                    height: 45px;
+                    padding: 11px 0px 6px 13px;
+                    width: 45px;
                 }
             }
-
         }
 
-    }
-    .contenido{
-        .cuadro-azul{
-            float:left;
-            width:500px;
-            height:563px;
-            padding: 100px 50px;
-        }
-        .video{
-            float:right;
-            width:500px;
-        }
-        .foto-gente{
-            float:left;
-            width: 500px;
-        }
-        .foto-moto{
-            float:right;
-            width: 500px;
-        }
-        .callToAct{
-            float:right;
-            width:500px;
-            height:204px;
-            &:hover{
-                background-color:@azul-masesa;
-                color:@amarillo;
-                &:visited{
-                    color:@amarillo;
-                }
-            }
-
-        }
-    }
-
-
-
-    #contacto{
-        width: 60%;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-    }
-    #contacto button{
-        width: 30%;
-        float:right;
-    }
-    .loading{
-        padding-top:50%;
     }
 }
+.contenido{
+    width: 1001px;
+    margin: 0 auto;
+    .cuadro-azul{
+        float:left;
+        width:500px;
+        height:563px;
+        padding: 100px 50px;
+    }
+    .video{
+        float:right;
+        width:500px;
+    }
+    .foto-gente{
+        float:left;
+        width: 500px;
+    }
+    .foto-moto{
+        float:right;
+        width: 500px;
+    }
+    .callToAct{
+        float:right;
+        width:500px;
+        height:204px;
+        &:hover{
+            background-color:@azul-masesa;
+            color:@amarillo;
+            &:visited{
+                color:@amarillo;
+            }
+        }
+    }
+    .app-formulario{
+        h1{
+            font-size: 3.2em;
+            text-align: center;
+        }
+        #contacto{
+            width: 60%;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+        }
+        #contacto button{
+            width: 30%;
+            float:right;
+        }
+    }
+    
+    .opaco{
+        .loading{
+            padding-top:20%;
+        }
+        .error{
+            margin-top:30%;
+        }
+    }
+}
+.gracias{
+    padding:8% 0;
+    h1{
+        font-size:3.5em;
+        text-align:center;
+        color:@azul-masesa;
+    }
+    img{
+        width:20%;
+        margin:40px auto;
+    }
+    p{
+        color:@azul-masesa;
+        padding:0 30px;
+        text-align:center;
+    }
+}
+
 }
 
 /* Desktop */

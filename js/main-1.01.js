@@ -1,13 +1,5 @@
 $(document).ready(function(){
 
-    // Efecto
-
-    window.sr = ScrollReveal();
-    sr.reveal('.my-row');
-    sr.reveal('.app-marcas');
-    sr.reveal('.app-secciones');
-
-    // Carrusel
 
     // Activate Carousel
     $("#myCarousel,#myCarousel1").carousel({
@@ -46,7 +38,7 @@ $(document).ready(function(){
             $(this).css('background','');
             $(this).css('color','');
 
-            // Habilito el botón que asumo esta deshabilitado
+            // Habilito el botÃ³n que asumo esta deshabilitado
             $('#btn-contacto').removeAttr('disabled');
 
         });
@@ -101,9 +93,9 @@ $(document).ready(function(){
             $('#Estado').remove();
             $('#Ciudad').remove();
 
-            // Creo campo para que teclen el nombre del país
+            // Creo campo para que teclen el nombre del paÃ­s
             $('#Pais').after('\
-                <input type="text" name="OtroPais" id="OtroPais" tabindex="6" placeholder="Nombre del país" required autocomplete="off">\
+                <input type="text" name="OtroPais" id="OtroPais" tabindex="6" placeholder="Nombre del paÃ­s" required autocomplete="off">\
             ').focus();
         }else{
             $('#OtroPais').remove();
@@ -119,7 +111,7 @@ $(document).ready(function(){
             ');
         }
 
-        // Limpio el select y le agrego el mensaje de acción
+        // Limpio el select y le agrego el mensaje de acciÃ³n
         $('#Estado').html('');
         $('#Estado').append('<option value="">Selecciona el departamento / región</option>');
 
@@ -184,102 +176,34 @@ $(document).ready(function(){
 
     });
 
-    // Inteligencia sobre asunto
-    $('#Asunto').change(function(){
+    // Inteligencia sobre moto y pago
 
-        // Si ya existe creado el nodo lo elimino
-        $('#Moto').remove();
-        $('#Accesorio').remove();
-        $('#Reclamo').remove();
-        $('#Pago').remove();
+    // Imprimo listado de motos
+    $('#Pago').before('\
+        <select name="Motocicleta que te interesa" id="Moto" tabindex="9" required>\
+            <option value="" selected="selected">Moto que te interesa</option>\
+        </select>\
+    ');
 
-        var asunto = $('#Asunto option:selected').val();
+    $.ajax({
+        data:   'accion=traerMotos',
+        url:    '/wp-content/themes/Masesa-2016/class/Ajax.class.php',
+        type:   'POST',
+        dataType: 'json',
+        contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+        beforeSend: function (xhr) {
+            try{
+                //con esto compongo los acentos y agregue una linea al php header
+                xhr.overrideMimeType('text/html; charset=UTF-8');
+                //  $("#resultado").html("Procesando, espere por favor...").css("padding","3px").show();
+            }catch(e){
+            }
+        },
+        success:  function (response) {
 
-        // Si se selecciona moto nueva o moto usada
-        if(asunto === 'Moto nueva' || asunto === 'Moto usada'){
-
-            // Llevo control del tipo que se selecciona
-            tipoAsunto = asunto;
-
-            // Imprimo listado de motos
-            $('#Asunto').after('\
-                <select name="Motocicleta que te interesa" id="Moto" tabindex="9" required>\
-                    <option value="" selected="selected">Moto que te interesa</option>\
-                </select>\
-            ');
-
-            $.ajax({
-                data:   'accion=traerMotos',
-                url:    '/wp-content/themes/Masesa-2016/class/Ajax.class.php',
-                type:   'POST',
-                dataType: 'json',
-                contentType: "application/x-www-form-urlencoded;charset=UTF-8",
-                beforeSend: function (xhr) {
-                    try{
-                        //con esto compongo los acentos y agregue una linea al php header
-                        xhr.overrideMimeType('text/html; charset=UTF-8');
-                        //  $("#resultado").html("Procesando, espere por favor...").css("padding","3px").show();
-                    }catch(e){
-                    }
-                },
-                success:  function (response) {
-
-                    for(var i=0;i<response.length;i++){
-                        $('#Moto').append('<option value="'+response[i]['nombre']+'">'+response[i]['nombre']+'</option>');
-                    }
-                }
-            });
-            // Imprimo opción de pago
-            $('#Moto').after('\
-                <select name="Forma de Pago que te interesa" id="Pago" tabindex="10" required>\
-                    <option value="" selected="selected">Forma de pago que te interesa</option>\
-                    <option value="Crédito">Crédito</option>\
-                    <option value="Contado">Contado</option>\
-                </select>\
-            ');
-
-        };
-
-        // Si se selecciona Accesorios
-        if(asunto === 'Accesorio'){
-
-            // Llevo control del tipo que se selecciona
-            tipoAsunto = asunto;
-
-            // Imprimo listado de accesorios
-            $('#Asunto').after('\
-                <select name="Accesorio" id="Accesorio" tabindex="9" required>\
-                    <option value="">¿Qué tipo de accesorio te interesa?</option>\
-                    <option value="Casco">Casco</option>\
-                    <option value="Chumpa">Chumpa / Chaqueta</option>\
-                    <option value="Guantes">Guantes</option>\
-                    <option value="Ropa">Ropa</option>\
-                    <option value="Candado">Candado</option>\
-                    <option value="Otro">Otro</option>\
-                </select>\
-            ');
-        }
-
-        // Si se selecciona Reclamo
-        if(asunto === 'Reclamo'){
-
-            // Llevo control del tipo que se selecciona
-            tipoAsunto = asunto;
-
-            // Imprimo listado de accesorios
-            $('#Asunto').after('\
-                <select name="Reclamo" id="Reclamo" required>\
-                    <option value="">Dirije el reclamo a:</option>\
-                    <option value="Taller">Talleres</option>\
-                    <option value="Ventas">Ventas</option>\
-                    <option value="Garantía">Garantías</option>\
-                    <option value="SAC">Servicio al cliente</option>\
-                    <option value="Distribuidor">Distribuidores</option>\
-                    <option value="Placas">Placas</option>\
-                    <option value="Repuestos">Repuestos</option>\
-                    <option value="Otros">Otros</option>\
-                </select>\
-            ');
+            for(var i=0;i<response.length;i++){
+                $('#Moto').append('<option value="'+response[i]['nombre']+'">'+response[i]['nombre']+'</option>');
+            }
         }
     });
 
@@ -289,7 +213,7 @@ $(document).ready(function(){
         // Desabilito el funcionamiento del boton y lo dejo a merced mio ;)
         e.preventDefault();
 
-        // Deshabilito el botón enviar
+        // Deshabilito el botÃ³n enviar
         $('#btn-contacto').attr("disabled","disabled");
 
         // Antes de hacer cualquier cosa compruebo que todos los campos se encuentren llenos
@@ -297,105 +221,25 @@ $(document).ready(function(){
 
         // Si no encuentro campos vacios entonces continuo con el proceso
         if (vacios === 0){
-            // Dependiendo del país seleccionado puede venir Estado, Ciudad o hasta un campo
+            // Dependiendo del paÃ­s seleccionado puede venir Estado, Ciudad o hasta un campo
             // llamado OtroPais
-
-            var paisSelec   = $('#Pais option:selected').val();
-            var envioPais   = '';
-            var envioEstado = undefined;
-            var envioCiudad = undefined;
-
-            if (paisSelec === 'Otro'){
-
-                envioPais   = $('#OtroPais').val();
-
-            }else{
-
-                envioPais   = paisSelec;
-                envioEstado = $('#Estado option:selected').val();
-                envioCiudad = $('#Ciudad option:selected').val();
-
-            }
 
             // Creo mi arreglo de datos dependiendo del asunto elegido
 
-            if(tipoAsunto === 'Moto nueva' || tipoAsunto === 'Moto usada'){
-
-                var formData = {
-                    'Nombre'     :   $('input[name=Nombre]').val(),
-                    'Apellido'   :   $('input[name=Apellido]').val(),
-                    'Email'      :   $('input[name=Email]').val(),
-                    'Telefono'   :   $('input[name=Telefono]').val(),
-                    'Pais'       :   envioPais,
-                    'Estado'     :   envioEstado,
-                    'Ciudad'     :   envioCiudad,
-                    'Asunto'     :   $('#Asunto option:selected').val(),
-                    'Moto'       :   $('#Moto option:selected').val(),
-                    'Pago'       :   $('#Pago option:selected').val(),
-                    'Comentarios':   $('#Comentarios').val(),
-                    'Formulario' :   $('input[name=Formulario]').val(),
-                    'Navegador'  :   $.browser.name,
-                    'Navegador-ver': $.browser.version,
-                    'OS'         :   $.os.name
-                };
-
-            }else if (tipoAsunto === 'Accesorio'){
-
-                var formData = {
-                    'Nombre'     :   $('input[name=Nombre]').val(),
-                    'Apellido'   :   $('input[name=Apellido]').val(),
-                    'Email'      :   $('input[name=Email]').val(),
-                    'Telefono'   :   $('input[name=Telefono]').val(),
-                    'Pais'       :   envioPais,
-                    'Estado'     :   envioEstado,
-                    'Ciudad'     :   envioCiudad,
-                    'Asunto'     :   $('#Asunto option:selected').val(),
-                    'Accesorio'  :   $('#Accesorio option:selected').val(),
-                    'Comentarios':   $('#Comentarios').val(),
-                    'Formulario' :   $('input[name=Formulario]').val(),
-                    'Navegador'  :   $.browser.name,
-                    'Navegador-ver': $.browser.version,
-                    'OS'         :   $.os.name
-                };
-
-            }else if (tipoAsunto === 'Reclamo'){
-
-                var formData = {
-                    'Nombre'     :   $('input[name=Nombre]').val(),
-                    'Apellido'   :   $('input[name=Apellido]').val(),
-                    'Email'      :   $('input[name=Email]').val(),
-                    'Telefono'   :   $('input[name=Telefono]').val(),
-                    'Pais'       :   envioPais,
-                    'Estado'     :   envioEstado,
-                    'Ciudad'     :   envioCiudad,
-                    'Asunto'     :   $('#Asunto option:selected').val(),
-                    'Reclamo'    :   $('#Reclamo option:selected').val(),
-                    'Comentarios':   $('#Comentarios').val(),
-                    'Formulario' :   $('input[name=Formulario]').val(),
-                    'Navegador'  :   $.browser.name,
-                    'Navegador-ver': $.browser.version,
-                    'OS'         :   $.os.name
-                };
-
-            }else{
-
-                var formData = {
-                    'Nombre'     :   $('input[name=Nombre]').val(),
-                    'Apellido'   :   $('input[name=Apellido]').val(),
-                    'Email'      :   $('input[name=Email]').val(),
-                    'Telefono'   :   $('input[name=Telefono]').val(),
-                    'Pais'       :   envioPais,
-                    'Estado'     :   envioEstado,
-                    'Ciudad'     :   envioCiudad,
-                    'Asunto'     :   $('#Asunto option:selected').val(),
-                    'Comentarios':   $('#Comentarios').val(),
-                    'Formulario' :   $('input[name=Formulario]').val(),
-                    'Navegador'  :   $.browser.name,
-                    'Navegador-ver': $.browser.version,
-                    'OS'         :   $.os.name
-                };
-
-            }
+            var formData = {
+                'Nombre'     :   $('input[name=Nombre]').val(),
+                'Email'      :   $('input[name=Email]').val(),
+                'Telefono'   :   $('input[name=Telefono]').val(),
+                'Pais'       :   $('#Pais option:selected').val(),
+                'Estado'     :   $('#Estado option:selected').val(),
+                'Ciudad'     :   $('#Ciudad option:selected').val(),
+                'Moto'       :   $('#Moto option:selected').val(),
+                'Pago'       :   $('#Pago option:selected').val(),
+                'Formulario' :   $('input[name=Formulario]').val(),
+                'Navegador'  :   $.browser.name,
+                'Navegador-ver': $.browser.version,
+                'OS'         :   $.os.name
+            };
 
 
             // Muestro pantalla opaca
@@ -422,14 +266,7 @@ $(document).ready(function(){
                     // Borro el contenido de los campos
                     $('#contacto')[0].reset();
 
-                    // Imprimo mensaje de éxito
-                    $mensaje = $('.respuesta');
-
-                    // Limpio area de mensaje
-                    $mensaje.html('');
-                    $mensaje.parent().removeClass('error');
-                    $mensaje.parent().addClass('confirma');
-                    $mensaje.append('Hemos recibido tu mensaje.');
+                    window.location.replace("http://masesa.com/cuandoarrancamos/gracias.html");
 
                     // Limpio los estilos para dejar el form con los fondos en $mensaje
                     limpioEstilos();
@@ -449,7 +286,7 @@ $(document).ready(function(){
                     $mensaje.parent().addClass('error');
                     $mensaje.append('Por favor intenta de nuevo, ha ocurrido un error y no hemos recibido su mensaje.');
 
-                    // Habilito el botón por que hubo error
+                    // Habilito el botÃ³n por que hubo error
                     $('#btn-contacto').removeAttr('disabled');
                 }
             });
@@ -468,7 +305,7 @@ $(document).ready(function(){
             $mensaje.parent().addClass('error');
             $mensaje.append('Por favor rellena los '+ vacios +' campos marcados con rojo ya que son obligatorios.');
 
-            // Habilito el botón por que hubo error
+            // Habilito el botÃ³n por que hubo error
             $('#btn-contacto').removeAttr('disabled');
         }
     });
@@ -502,7 +339,7 @@ $(document).ready(function(){
                             <li class="app-agencia-info">\
                                 <h3>DISTRIBUIDOR - ' + response[i]['nombre'] + '</h3>\
                                 <p>\
-                                    <strong>Dirección: </strong>' + response[i]['direccion'] + '<br/><strong>TELS:  </strong>' + response[i]['tels'] + '<br/>\
+                                    <strong>DirecciÃ³n: </strong>' + response[i]['direccion'] + '<br/><strong>TELS:  </strong>' + response[i]['tels'] + '<br/>\
                                 </p>\
                                 <div class="app-map-der">\
                                 </div>\
@@ -541,7 +378,7 @@ $(document).ready(function(){
                             <li class="app-agencia-info">\
                                 <h3>TALLER - ' + response[i]['nombre'] + '</h3>\
                                 <p>\
-                                    <strong>Dirección:</strong>' + response[i]['direccion'] + '<br/><strong>TELS: </strong>' + response[i]['tels'] + '<br/>\
+                                    <strong>DirecciÃ³n:</strong>' + response[i]['direccion'] + '<br/><strong>TELS: </strong>' + response[i]['tels'] + '<br/>\
                                 </p>\
                                 <div class="app-map-der">\
                                 </div>\
@@ -569,7 +406,7 @@ $(document).ready(function(){
 
     if (mq.matches){
 
-        // Efecto menú para indicar en que pagina estamos
+        // Efecto menÃº para indicar en que pagina estamos
         function asignoMenu() {
             var path = window.location.pathname;
             path = path.replace(/\/$/, "");
@@ -623,7 +460,7 @@ $(document).ready(function(){
 
         });
 
-        // cuando es tablet activo la pestaña de GT
+        // cuando es tablet activo la pestaÃ±a de GT
         $('.nav-tabs li:eq(0)').addClass('active');
 
         //console.time('loop');
