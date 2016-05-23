@@ -58,13 +58,13 @@
                 <div id="myCarousel" class="carousel slide app-carousel" data-ride="carousel">
                    <div class="carousel-inner" role="listbox">
                        <div class="item active">
-                           <img src="/img/slide/Sandra.jpg" alt="" class="img-responsive">
+                           <img src="img/slide/Sandra.jpg" alt="" class="img-responsive">
                        </div>
                        <div class="item">
-                           <img src="/img/slide/Santiago.jpg" alt="" class="img-responsive">
+                           <img src="img/slide/Santiago.jpg" alt="" class="img-responsive">
                        </div>
                        <div class="item">
-                           <img src="/img/slide/Alfonso.jpg" alt="" class="img-responsive">
+                           <img src="img/slide/Alfonso.jpg" alt="" class="img-responsive">
                        </div>
                    </div>
                 </div>
@@ -73,29 +73,27 @@
                 <div id="myCarousel1" class="carousel slide app-carousel" data-ride="carousel">
                    <div class="carousel-inner" role="listbox">
                        <div class="item active">
-                           <img src="/img/slide/Sandra-pazola.jpg" alt="" class="img-responsive">
+                           <img src="img/slide/Sandra-pazola.jpg" alt="" class="img-responsive">
                        </div>
                        <div class="item">
-                           <img src="/img/slide/Santiago-dakar.jpg" alt="" class="img-responsive">
+                           <img src="img/slide/Santiago-dakar.jpg" alt="" class="img-responsive">
                        </div>
                        <div class="item">
-                           <img src="/img/slide/Alfonso-pulsar.jpg" alt="" class="img-responsive">
+                           <img src="img/slide/Alfonso-pulsar.jpg" alt="" class="img-responsive">
                        </div>
                    </div>
                 </div>
             </div>
-            <a class="callToAct" href="#">
+            <a class="callToAct" href="#formulario">
                 <h2>Arranca Ahora</h2>
                 <p>Cotiza Aquí</p>
             </a>
             <div class="app-formulario  text-justify">
                 <div class="container">
-                    <div class="row">
-                        <h1>Formulario de contacto</h1>
                         <div class="formulario" id="formulario">
+                            <h1>Formulario de contacto</h1>
                             <form action="" method="post" id="contacto">
-                                <input type="text" name="Nombre" placeholder="Ingresa ambos nombres" autofocus tabindex="1" required autocomplete='off'>
-                                <input type="text" name="Apellido" placeholder="Ingresa ambos apellidos" tabindex="2" required autocomplete='off'>
+                                <input type="text" name="Nombre" placeholder="Ingresa nombres y apellidos" autofocus tabindex="1" required autocomplete='off'>
                                 <input type="email" name="Email" placeholder="Correo electrónico válido" tabindex="3" autocomplete='off' required>
                                 <input type="tel" name="Telefono" pattern="[0-9 ]*" placeholder="Teléfono: 23244400 sin espacios ni guiones" tabindex="4" required autocomplete='off' maxlength="9">
 
@@ -111,17 +109,11 @@
 
                                 </select>
 
-                                <select name="Asunto" id="Asunto" tabindex="8" required>
-                                    <option value="" selected="selected">¿Cuál es el asunto de tu mensaje?</option>
-                                    <option value="Moto nueva">Cotizar moto nueva</option>
-                                    <option value="Moto usada">Cotizar moto usada</option>
-                                    <option value="Accesorio">Cotizar accesorio</option>
-                                    <option value="Repuesto">Cotizar repuesto</option>
-                                    <option value="Reclamo">Presentar un reclamo</option>
-                                    <option value="Placas">Consulta sobre trámite de placa</option>
-                                    <option value="Otros">Otro tema</option>
+                                <select name="Forma de Pago que te interesa" id="Pago" tabindex="10" required="">
+                                    <option value="" selected="selected">Forma de pago que te interesa</option>
+                                    <option value="Crédito">Crédito</option>
+                                    <option value="Contado">Contado</option>
                                 </select>
-                                <textarea id="Comentarios" name="Comentarios" placeholder="¿Deseas agregar algún comentario?" tabindex="11" required></textarea>
 
                                     <div class="opaco">
                                         <div class="loading"><img src="/img/loader.gif" alt=""></div>
@@ -140,7 +132,6 @@
                                 <input type="hidden" name="Formulario" value="Web-Masesa">
                                 <div class="clearfix"></div>
                             </form>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -10,16 +10,13 @@ $(document).ready(function(){
     // Carrusel
 
     // Activate Carousel
-    $("#myCarousel").carousel();
-
-    // Enable Carousel Indicators
-    $(".item").click(function(){
-        $("#myCarousel").carousel(1);
+    $("#myCarousel,#myCarousel1").carousel({
+        pause:false
     });
 
-    // Enable Carousel Controls
-    $(".left").click(function(){
-        $("#myCarousel").carousel("prev");
+    // Muestro Formulario
+    $('.callToAct').click(function(event) {
+        $('.app-formulario').fadeIn('slow');
     });
 
     //Efecto botonu subir

@@ -1,5 +1,5 @@
 /* ==========================================================================
-    Masesa custom styles   
+    Masesa custom styles
    ========================================================================== */
     @amarillo:      rgba(255, 212, 0, 1);
     @azul-masesa:   rgba(0, 71, 158, 1);
@@ -27,9 +27,6 @@ body{
         text-transform: uppercase;
         position: relative;
         z-index: 999;
-        .navbar-header{
-            width: 100%;
-        }
         .app-navbar{
             -moz-box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.75);
             -webkit-box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.75);
@@ -42,7 +39,7 @@ body{
                 height: auto;
                 margin:8px 0 0 15px;
                 padding: 0;
-                width: 181px;
+                width: 145px;
             }
             .app-social>li>a{
                 text-shadow: none;
@@ -86,6 +83,7 @@ body{
             background-color: @azul-masesa;
             color:@blanco;
             padding:15px 12px;
+            text-align:center;
             h1{
                 font-size:2.5em;
                 font-weight: bold;
@@ -180,17 +178,17 @@ body{
         .msg{
             display: none;
         }
-        .error, .confirma{  
+        .error, .confirma{
             border-radius: 8px;
             display:block;
-            font-size: 1.5rem;    
+            font-size: 1.5rem;
             line-height: 1.5rem;
             margin: 40% auto 0 auto;
             min-height: 100px;
             padding: 12px 15px;
             position: relative;
             text-align: center;
-            width: 90%;    
+            width: 90%;
             z-index: 9999;
         }
         .error{
@@ -217,7 +215,7 @@ body{
             padding: 2px 0 0 2px;
             position: absolute;
             right: -10px;
-            top: -10px;   
+            top: -10px;
             width: 28px;
         }
         .confirma .exit{
@@ -251,7 +249,7 @@ body{
             background-color: rgba(0,0,0,.85);
             bottom:0;
             display: none;
-            left:0;    
+            left:0;
             min-height: 100%;
             min-width: 100%;
             position: absolute;
@@ -265,19 +263,17 @@ body{
             width:123px;
         }
 
-    
+
 }
 
 }
 
 /* Tablet */
 @media (min-width:768px){
-
-}
-
-/* Desktop */
-@media (min-width:992px){
 .wrapper{
+    .container{
+        width:1001px;
+    }
     width:1001px;
     margin:0 auto;
     .app-header{
@@ -289,19 +285,18 @@ body{
                 .app-logo{
                     float:left;
                     height: auto;
-                    margin:-15px 0 0 15px;
+                    margin:5px 0 0 15px;
                     padding:0;
-                    width: 50%;
                 }
                 .app-social{
                     margin:-5px 0 0 0;
                     width:270px;
                     float:right;
                     .app-circle{
-                        font-size: 1.5em;
-                        height: 55px;
+                        font-size: 1em;
+                        height: 45px;
                         padding: 11px 0px 6px 13px;
-                        width: 55px;
+                        width: 45px;
                     }
                 }
             }
@@ -314,8 +309,7 @@ body{
             float:left;
             width:500px;
             height:563px;
-            padding: 100px 50px; 
-            text-align:center;    
+            padding: 100px 50px;
         }
         .video{
             float:right;
@@ -340,12 +334,12 @@ body{
                     color:@amarillo;
                 }
             }
-            
+
         }
     }
 
-        
-    
+
+
     #contacto{
         width: 60%;
         font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -357,7 +351,12 @@ body{
     .loading{
         padding-top:50%;
     }
-}   
+}
+}
+
+/* Desktop */
+@media (min-width:992px){
+
 }
 
 
